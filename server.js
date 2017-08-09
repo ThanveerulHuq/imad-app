@@ -56,7 +56,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/article-one', function (req, res) {
-  res.send('Article one is ready and will be served here');
+  res.send(CreateTemplate(articleOne));
 });
 
 app.get('/ui/style.css', function (req, res) {
