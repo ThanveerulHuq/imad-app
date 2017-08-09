@@ -56,12 +56,12 @@ app.get('/', function (req, res) {
 
 var counter=0;
 app.get('/article-one', function (req, res) {
-    counter=counter+1;
-  res.send(counter.toString());
+  res.send(CreateTemplate(articleOne));
 });
 
 app.get('/counter', function (req, res) {
-  res.send(CreateTemplate(articleOne));
+  counter=counter+1;
+  res.send(counter.toString());
 });
 
 
