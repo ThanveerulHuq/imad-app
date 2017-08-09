@@ -25,7 +25,6 @@ function CreateTemplate(data){
 </head>
 <body>
 <div class="container">
-<
     <div class="header fixed-top">
         <div class="logo">
             ${date}        </div>
