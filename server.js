@@ -5,6 +5,52 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+var articleOne={
+    title:'Article One',
+    date:'August 9 2017',
+    content:'<p>this is article one created from server.js</p>'
+}
+
+
+function CreateTemplate(data){
+    var title=data.title;
+    var date= data.date;
+    var content=data.content;
+    var htmltemplate=`
+    <html>
+<head>
+    <title>
+    ${date}
+    </title>
+</head>
+<body>
+<div class="container">
+<
+    <div class="header fixed-top">
+        <div class="logo">
+            ${date}        </div>
+        <div class="title">
+            Sanmina Partner Connect
+        </div>
+    </div>
+    <div class="main-wrapper">
+        <main>${content}</main>
+    </div>
+    <div class="fixed-bottom footer">
+        <div class="copyright">
+            <span class="copyright">©</span>Copyright 2017 Sanmina Corporation. All rights reserved.
+        </div>
+    </div>
+</div>
+</body>
+</html>`
+    
+}
+
+
+
+
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
