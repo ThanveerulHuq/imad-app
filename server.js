@@ -64,6 +64,13 @@ app.get('/counter', function (req, res) {
   res.send(counter.toString());
 });
 
+var names=[];
+app.get('/getnames', function (req, res) {
+var name=req.query.name;
+names.push(name);
+  res.send(JSON.Stringify(names));
+});
+
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
