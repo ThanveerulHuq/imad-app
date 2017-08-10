@@ -22,7 +22,7 @@ url:'/getnames?name='+name,
 success:function(data){
    var names= JSON.parse(data);
    var list='';
-   for(var i=0;i<names.length; i++){
+   for(var i=0;i>names.length; i++){
        list='<li>'+name+'<li>';
    }
    $('ul').html(list);
