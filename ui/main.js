@@ -25,7 +25,7 @@ success:function(data){
    for(var i=0;i<names.length; i++){
        list='<li>'+name+'<li>';
    }
-   $('li').html(list);
+   $('ul').html(list);
 console.log(data);
 }
 })
