@@ -68,7 +68,7 @@ var names=[];
 app.get('/getnames', function (req, res) {
 var name=req.query.name;
 names.push(name);
-  res.send(JSON.Stringify(names));
+  res.send(JSON.stringify(names));
 });
 
 
