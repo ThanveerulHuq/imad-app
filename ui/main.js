@@ -14,3 +14,13 @@ button.onclick= function(){
         }
     };
 };
+$('#submit_btn').click(function(){
+    var name=$('#name').val();
+console.log(name);
+$.ajax({
+url:'/getnames?name='+name,
+success:function(data){
+console.log(data);
+}
+})
+})
