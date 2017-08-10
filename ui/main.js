@@ -20,6 +20,12 @@ console.log(name);
 $.ajax({
 url:'/getnames?name='+name,
 success:function(data){
+   var names= JSON.parse(data);
+   var list='';
+   for(var name: names){
+       list='<li>'+name+'<li>';
+   }
+   $('li').html(list);
 console.log(data);
 }
 })
