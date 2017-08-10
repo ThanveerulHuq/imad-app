@@ -22,11 +22,10 @@ url:'/getnames?name='+name,
 success:function(data){
    var names= JSON.parse(data);
    var list='';
-   for(var i=0;i>names.length; i++){
-       list='<li>'+name+'<li>';
+   for(var i=0;i<names.length; i++){
+       list+='<li>'+names[i]+'</li>';
    }
    $('ul').html(list);
-console.log(data);
 }
 })
 })
