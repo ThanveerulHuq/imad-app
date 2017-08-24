@@ -17,7 +17,7 @@ var articleOne={
     title:'Article One',
     date:'August 9 2017',
     content:'<p>this is article one created from server.js</p>'
-}
+};
 
 
 function CreateTemplate(data){
@@ -56,22 +56,7 @@ function CreateTemplate(data){
 
 var pool=new Pool(config);
 
-app.get('/test-db',function(req,res){
-   
-   pool.query('SELECT * from user',function(err,result)
-   {
-       if(err)
-       {
-           res.status(500).send(err.toString());
-           
-       }
-       else
-       {
-           res.send(JSON.stringify(result));
-       }
-   });
-   
-});
+
 
 
 app.get('/', function (req, res) {
