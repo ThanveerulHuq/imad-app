@@ -19,7 +19,7 @@ button.onclick= function(){
 
 
 
-$.ajax({
+/*$.ajax({
 url:'/create-user',
 contentType: "application/json",
 data:'{"username":"thanveerul_huq","password":"password"}',
@@ -27,7 +27,7 @@ type:'POST',
 success:function(data){
    console.log('success');
 }
-});
+});*/
 
 
 $('#login').click(function(){
