@@ -18,7 +18,7 @@ $.ajax({
 url:'/create-user',
 data:{username:'thanveer',password:'password'},
 type:'POST',
-contentType:'appliction/json',
+contentType: "application/json",
 success:function(data){
    console.log('success');
 }
