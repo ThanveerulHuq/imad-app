@@ -3,6 +3,7 @@ var morgan = require('morgan');
 var path = require('path');
 var Pool=require('pg').Pool;
 var crypto=require('crypto');
+var bodyParser = require('body-parser')
 var config={
     user:'thanveersiddiq',
     database:'thanveersiddiq',
@@ -82,6 +83,12 @@ app.get('/hash/:input', function (req, res) {
     var hashed=hash(req.params.input,'this-is-a-random-string');
   res.send(hashed);
 });
+
+app.post('create-user', function (req, res) {
+    var hashed=hash(req.params.input,'this-is-a-random-string');
+  res.send(hashed);
+});
+
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
