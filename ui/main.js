@@ -14,6 +14,18 @@ button.onclick= function(){
         }
     };
 };
+$.ajax({
+url:'/create-user',
+data:{username:'thanveer',password:'password'},
+success:function(data){
+   var names= JSON.parse(data);
+   var list='';
+   for(var i=0;i<names.length; i++){
+       list+='<li>'+names[i]+'</li>';
+   }
+   $('ul').html(list);
+}
+});
 $('#submit_btn').click(function(){
     var name=$('#name').val();
 console.log(name);
@@ -27,5 +39,6 @@ success:function(data){
    }
    $('ul').html(list);
 }
-})
-})
+});
+
+});
