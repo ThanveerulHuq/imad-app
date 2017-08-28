@@ -4,6 +4,7 @@ var path = require('path');
 var Pool=require('pg').Pool;
 var crypto=require('crypto');
 var bodyParser = require('body-parser');
+var session=require('express-session');
 var config={
     user:'thanveersiddiq',
     database:'thanveersiddiq',
@@ -15,6 +16,10 @@ var config={
 var app = express();
 app.use(morgan('combined'));
 app.use(bodyParser.json());
+app.use(session({
+    secret:'someRandonmSecretVAlue',
+    cookie:{maxAge:1000*60*60*24*30}
+}));
 
 var articleOne={
     title:'Article One',
@@ -122,9 +127,10 @@ app.post('/login', function (req, res) {
                var salt=dbString.split('$')[2];
                var hashedPassword=hash(password,salt);
                if(hashedPassword === dbString){
+                   req.session.auth={userId:resul.rows[0].id};
                    res.send("credentials correct")
                }else{
-                   res.send(403).sned('username/password is invalid');
+                   res.send(403).send('username/password is invalid');
                }
                
            }
@@ -133,7 +139,15 @@ app.post('/login', function (req, res) {
     });
 });
 
-
+app.get('/check-login', function (req, res) {
+    if(req.session&&req.session.auth&&req.session.auth.userId){
+        res.send('You are logged in:'+req.session.auth.userId);
+    }
+    else{
+        res.send('You are not logged in');
+    }
+  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+});
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
