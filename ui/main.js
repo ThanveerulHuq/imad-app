@@ -14,15 +14,27 @@ button.onclick= function(){
         }
     };
 };
+
+
+
+
+
 $.ajax({
 url:'/create-user',
 contentType: "application/json",
-data:'{"username":"thanveer","password":"password"}',
+data:'{"username":"thanveerul_huq","password":"password"}',
 type:'POST',
 success:function(data){
    console.log('success');
 }
 });
+
+
+
+
+
+
+
 $('#submit_btn').click(function(){
     var name=$('#name').val();
 console.log(name);
