@@ -30,7 +30,21 @@ success:function(data){
 });
 
 
-
+$('#login').click(function(){
+    var username=$('#username').val();
+    var password=$('password').val();
+    $.ajax({
+url:'/create-user',
+contentType: "application/json",
+data:JSON.stringify({username:username,password:password}),
+type:'POST',
+success:function(data){
+   console.log('success');
+}
+});
+    
+    
+});
 
 
 
