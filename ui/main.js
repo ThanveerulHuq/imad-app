@@ -16,7 +16,7 @@ button.onclick= function(){
 };
 $.ajax({
 url:'/create-user',
-data:{'username':'thanveer','password':'password'},
+data:{username:'thanveer',password:'password'},
 type:'POST',
 contentType:'appliction/json',
 success:function(data){
