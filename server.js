@@ -103,7 +103,6 @@ app.post('/create-user', function (req, res) {
            res.send("user successfully added");
        }    
     });
-  res.send(hashed);
 });
 
 
