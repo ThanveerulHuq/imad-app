@@ -32,7 +32,7 @@ success:function(data){
 
 $('#login').click(function(){
     var username=$('#username').val();
-    var password=$('password').val();
+    var password=$('#password').val();
     $.ajax({
 url:'/login',
 contentType: "application/json",
