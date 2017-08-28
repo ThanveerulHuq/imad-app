@@ -116,7 +116,7 @@ app.post('/login', function (req, res) {
        else
        {
            if(result.rows.length===0){
-               res.send(403).sned('username/password is invalid');
+               res.send(403).send('username/password is invalid');
            }else{
                var dbString=result.row[0].password;
                var salt=dbString.split('$')[2];
@@ -128,7 +128,7 @@ app.post('/login', function (req, res) {
                }
                
            }
-           res.send("user successfully added");
+           
        }    
     });
 });
