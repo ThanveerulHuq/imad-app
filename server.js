@@ -146,7 +146,6 @@ app.get('/check-login', function (req, res) {
     else{
         res.send('You are not logged in');
     }
-  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
